@@ -26,9 +26,6 @@ namespace BookCatalog.API.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetBookById(int id)
         {
             if (id <= 0)
@@ -43,8 +40,6 @@ namespace BookCatalog.API.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> AddBook([FromBody] CreateBookDto bookDto)
         {
             if (!ModelState.IsValid)
@@ -55,9 +50,6 @@ namespace BookCatalog.API.Controllers
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateBook(int id, [FromBody] BookDto bookDto)
         {
             if (id <= 0)
@@ -71,9 +63,6 @@ namespace BookCatalog.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> DeleteBook(int id)
         {
             if (id <= 0)
