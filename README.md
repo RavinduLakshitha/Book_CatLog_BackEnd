@@ -4,6 +4,7 @@ A high-performance backend service for managing a bookstore's inventory, built w
 
 This service prioritizes scalability and maintainability through the use of CQRS (Command Query Responsibility Segregation) implemented with MediatR.
 
+
 # 🛠️Technologies Used
 
 Framework	    .NET SDK 9.0 (C#)
@@ -14,6 +15,7 @@ ORM	          Dapper
 Testing	      XUnit & Moq
 
 
+
 # 🏗️ Architecture
 The application is split into four distinct, highly decoupled layers:
 
@@ -21,6 +23,8 @@ The application is split into four distinct, highly decoupled layers:
 2. BookCatalog.Application: CQRS Handlers, DTOs, and Interfaces (e.g., IBookRepository).
 3. BookCatalog.Infrastructure: Implementation of data access (Dapper/SQLite) and configuration.4
 4. BookCatalog.API: Presentation Layer (Controllers, DI, Swagger). (Outer Layer)
+
+   
    
 # 🛠️ Getting Started
 
@@ -37,6 +41,7 @@ cd BookCatalog
 Restore Dependencies:
 Bashdotnet restore
 
+
 # ▶️ Run the Application
 
 Navigate to the BookCatalog.API directory and use the dotnet watch command to run the application with automatic reloading on file changes.
@@ -45,6 +50,7 @@ Navigate to the BookCatalog.API directory and use the dotnet watch command to ru
 >dotnet watch run --launch-profile https
 
 The application will start on an address similar to https://localhost:5125/.
+
 
 # 🌐 API Endpoints (Swagger)
 
@@ -57,6 +63,7 @@ POST                /api/books       Creates a new book record.
 PUT                 /api/books/{id}  Updates an existing book.
 DELETE              /api/books/{id}  Deletes a book by ID.
 
+
 # 🔬 Testing 
 Unit tests for the Application Layer (CQRS handlers and DTO mapping) are implemented using XUnit and Moq.
 
@@ -64,6 +71,7 @@ How to Run Tests
 
 Navigate to the root directory (BookCatalog/).
 Execute the dotnet test command: dotnet test
+
 
 # ⚙️ Configuration
 
@@ -77,4 +85,5 @@ JSON{
 
 
 The books.db file is automatically created and initialized with the required table schema when the application first starts (via DbInitializer in Program.cs). Note: This file is ignored by Git via the .gitignore file.
+
 
