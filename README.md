@@ -4,7 +4,7 @@ A high-performance backend service for managing a bookstore's inventory, built w
 
 This service prioritizes scalability and maintainability through the use of CQRS (Command Query Responsibility Segregation) implemented with MediatR.
 
-# Technologies Used
+# 🛠️Technologies Used
 
 Framework	    .NET SDK 9.0 (C#)
 Architecture	Clean Architecture (4 Layers)
@@ -37,7 +37,7 @@ cd BookCatalog
 Restore Dependencies:
 Bashdotnet restore
 
-# Run the Application
+# ▶️ Run the Application
 
 Navigate to the BookCatalog.API directory and use the dotnet watch command to run the application with automatic reloading on file changes.
 
@@ -77,3 +77,4 @@ JSON{
 
 
 The books.db file is automatically created and initialized with the required table schema when the application first starts (via DbInitializer in Program.cs). Note: This file is ignored by Git via the .gitignore file.
+
